@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace curso_api_net.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -30,6 +30,9 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
+    [Route("Get/weatherForeCast")]
+    [Route("Get/weatherForeCast2")]
+    [Route("action")]
     public IEnumerable<WeatherForecast> Get()
     {
         return ListWeatherForeCast;
@@ -46,6 +49,6 @@ public class WeatherForecastController : ControllerBase
     public IActionResult Delete(int index)
     {
         ListWeatherForeCast.RemoveAt(index);
-        return Ok("rommel");
+        return Ok();
     }
 }
