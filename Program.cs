@@ -20,6 +20,10 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+//los middleware personalizados, van entre el middleware de UseAuthorization
+//y el end point (MapControllers)
+app.UseTimeMiddleware();
+
 app.MapControllers();
 
 app.Run();
